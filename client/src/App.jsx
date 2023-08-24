@@ -9,12 +9,12 @@ import Home from './pages/Home';
 import PrivateRoute from './components/PrivateRoute';
 
 function App() {
-	const [loggedIn, setLoggedIn] = useState(true);
+	const [loggedIn, setLoggedIn] = useState(false);
 
 	return (
-		<div className="w-full h-screen">
+		<div className="App">
 			<Routes>
-				<Route path="login" element={<Login />} />
+				<Route path="login" element={<Login loggedIn={loggedIn} />} />
 				<Route element={<PrivateRoute loggedIn={loggedIn} />}>
 					<Route path="/" element={<Home />} />
 				</Route>
